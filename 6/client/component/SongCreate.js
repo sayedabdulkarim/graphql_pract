@@ -24,7 +24,26 @@ class SongCreate extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state, " formm");
+    console.log({ state: this.state, props: this.props }, " formm");
+    // this.props.mutate({
+    //   variables: {
+    //     title: this.state.title,
+    //   },
+    // });
+    this.props
+      .mutate({
+        variables: {
+          title: this.state.title,
+        },
+      })
+      .then((response) => {
+        console.log("Mutation response:", response);
+        // Additional logic after mutation
+      })
+      .catch((error) => {
+        console.error("Mutation error:", error);
+        // Error handling
+      });
   }
 
   render() {
@@ -47,4 +66,13 @@ class SongCreate extends Component {
   }
 }
 
-export default SongCreate;
+const mutation = gql`
+  mutation AddSong($title: String) {
+    addSong(title: $title) {
+      id
+      title
+    }
+  }
+`;
+
+export default graphql(mutation)(SongCreate);
