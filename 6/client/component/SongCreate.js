@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
+import { Link, hashHistory } from "react-router";
+import query from "../queries/fetchSongs";
 
 class SongCreate extends Component {
   constructor(props) {
@@ -35,10 +37,12 @@ class SongCreate extends Component {
         variables: {
           title: this.state.title,
         },
+        refetchQueries: [{ query }],
       })
       .then((response) => {
         console.log("Mutation response:", response);
         // Additional logic after mutation
+        hashHistory.push("/");
       })
       .catch((error) => {
         console.error("Mutation error:", error);
@@ -49,6 +53,7 @@ class SongCreate extends Component {
   render() {
     return (
       <div>
+        <Link to="/">Go Back To Home</Link>
         <h1>SongCreate</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Song Title</label>
