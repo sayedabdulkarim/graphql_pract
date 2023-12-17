@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "age": 26,
+      "companyId": "1"
+    },
+    {
+      "id": "2",
+      "firstName": "Doe",
+      "age": 22,
+      "companyId": "2"
+    },
+    {
+      "id": "3",
+      "firstName": "Jane",
+      "age": 24,
+      "companyId": "2"
+    },
+    {
+      "firstName": "Stephen Hawkins",
+      "age": 26,
+      "id": "odBlNSv"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Company A",
+      "description": "Description of Company A"
+    },
+    {
+      "id": "2",
+      "name": "Company B",
+      "description": "Description of Company B"
+    },
+    {
+      "id": "3",
+      "name": "Company C",
+      "description": "Description of Company C"
+    }
+  ]
+}
