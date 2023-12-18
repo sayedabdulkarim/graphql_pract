@@ -2,6 +2,8 @@ import React from "react";
 import { graphql } from "react-apollo";
 import fetchSong from "../queries/fetchSong";
 import { Link } from "react-router";
+import LyicsCreate from "./LyicsCreate";
+import LyricsList from "./LyricsList";
 
 const SongDetails = (props) => {
   // Destructuring data from props
@@ -18,6 +20,10 @@ const SongDetails = (props) => {
       <Link to={"/"}>Back</Link>
       <h1>SongDetails</h1>
       <h2>{song.title}</h2> {/* Display the song title */}
+      {/*  */}
+      <LyicsCreate />
+      {/*  */}
+      <LyricsList />
     </div>
   );
 };
