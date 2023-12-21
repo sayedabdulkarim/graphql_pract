@@ -54,7 +54,7 @@ class SongCreate extends Component {
     return (
       <div>
         <Link to="/">Go Back To Home</Link>
-        <h1>SongCreate</h1>
+        <h1 onClick={() => console.log(this.props, " thiss")}>SongCreate</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Song Title</label>
           <input

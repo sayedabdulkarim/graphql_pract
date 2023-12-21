@@ -24,7 +24,7 @@ const SongList = (props) => {
 
   return (
     <div>
-      <h1>SongList</h1>
+      <h1 onClick={() => console.log(props, " thiss")}>SongList</h1>
       {data.loading ? (
         <div>Loading...</div>
       ) : (
